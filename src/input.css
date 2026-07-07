@@ -3,10 +3,22 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    overflow-x: hidden;
+  }
   body {
     font-family: 'Inter', sans-serif;
     background-color: #303539;
     color: #e1ebed;
+  }
+  /* Prevent long inline code / URLs from blowing out the layout */
+  p, li, td, th, h1, h2, h3, h4 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  /* Tables on mobile: allow horizontal scroll if needed */
+  table {
+    width: 100%;
   }
 }
 
@@ -69,7 +81,12 @@
   /* Gallery masonry */
   .gallery-grid {
     columns: 2;
-    column-gap: 0.75rem;
+    column-gap: 0.6rem;
+  }
+  @media (min-width: 640px) {
+    .gallery-grid {
+      column-gap: 0.75rem;
+    }
   }
   @media (min-width: 768px) {
     .gallery-grid {
@@ -85,7 +102,7 @@
   }
 
   .gallery-item {
-    @apply relative rounded-xl overflow-hidden mb-4 bg-white/5 border border-white/10
+    @apply relative rounded-xl overflow-hidden mb-3 sm:mb-4 bg-white/5 border border-white/10
            cursor-pointer transition-all duration-200 hover:border-brand-cyan/40 hover:shadow-lg;
     break-inside: avoid;
   }
@@ -101,7 +118,7 @@
 
   /* Contact cards */
   .contact-card {
-    @apply flex items-center gap-4 px-6 py-5 rounded-xl border border-white/10
+    @apply flex items-center gap-4 px-5 sm:px-6 py-4 sm:py-5 rounded-xl border border-white/10
            bg-white/5 hover:border-brand-cyan/50 hover:bg-white/10
            transition-all text-brand-light/70 hover:text-brand-light;
   }

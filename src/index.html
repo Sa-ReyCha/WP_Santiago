@@ -12,26 +12,41 @@
 
   <!-- NAV -->
   <nav class="fixed top-0 w-full bg-brand-dark/90 backdrop-blur-md border-b border-white/8 z-50">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
       <span class="font-mono font-bold text-brand-cyan tracking-tight">src ~</span>
-      <div class="flex gap-8 text-sm text-brand-light/50 font-medium">
-        <a href="#hero"           class="hover:text-brand-light transition-colors">home</a>
+      <!-- Desktop links -->
+      <div class="hidden md:flex gap-8 text-sm text-brand-light/50 font-medium">
+        <a href="#hero"                 class="hover:text-brand-light transition-colors">home</a>
         <a href="./projects/index.html" class="hover:text-brand-light transition-colors">projects</a>
-        <a href="#gallery"        class="hover:text-brand-light transition-colors">gallery</a>
-        <a href="#contact"        class="hover:text-brand-light transition-colors">contact</a>
+        <a href="#gallery"              class="hover:text-brand-light transition-colors">gallery</a>
+        <a href="#contact"              class="hover:text-brand-light transition-colors">contact</a>
+      </div>
+      <!-- Mobile burger -->
+      <button id="nav-toggle" class="md:hidden w-9 h-9 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-brand-light/70 hover:text-brand-cyan hover:border-brand-cyan/40 transition-colors" aria-label="Toggle menu">
+        <svg id="nav-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="nav-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <!-- Mobile drawer -->
+    <div id="nav-drawer" class="hidden md:hidden border-t border-white/8 bg-brand-dark/95 backdrop-blur-md">
+      <div class="px-5 py-4 flex flex-col gap-1 text-sm text-brand-light/70 font-medium">
+        <a href="#hero"                 class="py-2.5 hover:text-brand-cyan transition-colors">home</a>
+        <a href="./projects/index.html" class="py-2.5 hover:text-brand-cyan transition-colors">projects</a>
+        <a href="#gallery"              class="py-2.5 hover:text-brand-cyan transition-colors">gallery</a>
+        <a href="#contact"              class="py-2.5 hover:text-brand-cyan transition-colors">contact</a>
       </div>
     </div>
   </nav>
 
   <!-- ═══════════════════════════════════════════ HERO + ABOUT -->
-  <section id="hero" class="min-h-screen flex items-center pt-20">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16 py-16 w-full">
+  <section id="hero" class="min-h-screen flex items-center pt-24 md:pt-20">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16 py-10 md:py-16 w-full">
 
       <!-- 3-col on xl: photo | name+bio | skills sidebar -->
-      <div class="grid md:grid-cols-[260px_1fr] xl:grid-cols-[300px_1fr_280px] gap-10 xl:gap-14 items-start">
+      <div class="grid md:grid-cols-[260px_1fr] xl:grid-cols-[300px_1fr_280px] gap-8 md:gap-10 xl:gap-14 items-start">
 
         <!-- Col 1: Photo — clean, no borders/badges -->
-        <div class="mx-auto md:mx-0 w-56 sm:w-64 md:w-full">
+        <div class="mx-auto md:mx-0 w-48 sm:w-64 md:w-full max-w-full">
           <div class="relative rounded-2xl overflow-hidden" style="aspect-ratio: 3/4;">
             <img
               src="../public/photos/santiago.png"
@@ -59,32 +74,32 @@
         <!-- Col 2: Name + bio + CTAs + socials -->
         <div id="about">
           <!-- Role pill -->
-          <div class="inline-flex items-center gap-2 mb-7 px-3 py-1.5 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 w-fit">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"></span>
-            <span class="font-mono text-brand-cyan text-xs tracking-widest uppercase">GCID AIOps Engineer · SRE · SAP</span>
+          <div class="inline-flex items-center gap-2 mb-6 md:mb-7 px-3 py-1.5 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 max-w-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse shrink-0"></span>
+            <span class="font-mono text-brand-cyan text-[10px] sm:text-xs tracking-widest uppercase truncate">GCID AIOps Engineer · SRE · SAP</span>
           </div>
 
-          <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.05] mb-7">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.05] mb-6 md:mb-7 break-words">
             Santiago<br />
             <span class="gradient-text">Reyes</span><br />
             Chávez
           </h1>
 
-          <p class="text-brand-light/60 leading-relaxed mb-3 max-w-lg">
+          <p class="text-brand-light/60 text-[15px] sm:text-base leading-relaxed mb-3 max-w-lg">
             GCID AIOps Engineer (SRE) at SAP with two Master's degrees — MS in Applied Artificial Intelligence (ITESM) and MS in IT Management (UTM, in progress). I specialize in applying ML to infrastructure problems: anomaly detection, AI Security, and autonomous agent development.
           </p>
-          <p class="text-brand-light/35 text-sm leading-relaxed mb-9 max-w-lg">
+          <p class="text-brand-light/35 text-sm leading-relaxed mb-8 md:mb-9 max-w-lg">
             Specialization in Renewable Energy &amp; Advanced Data Analytics. Outside of work I'm a musician, gamer, and always learning something new.
           </p>
 
           <!-- CTAs -->
-          <div class="flex flex-wrap items-center gap-4">
+          <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
             <a href="./projects/index.html"
-               class="px-6 py-3 rounded-lg bg-brand-cyan text-brand-dark font-semibold text-sm hover:bg-brand-cyan/90 transition-colors">
+               class="px-6 py-3 rounded-lg bg-brand-cyan text-brand-dark font-semibold text-sm hover:bg-brand-cyan/90 transition-colors text-center">
               View projects
             </a>
             <a href="#contact"
-               class="px-6 py-3 rounded-lg border border-white/15 text-brand-light/70 text-sm font-medium hover:border-brand-cyan hover:text-brand-light transition-colors">
+               class="px-6 py-3 rounded-lg border border-white/15 text-brand-light/70 text-sm font-medium hover:border-brand-cyan hover:text-brand-light transition-colors text-center">
               Let's connect
             </a>
           </div>
@@ -146,7 +161,7 @@
       </div>
 
       <!-- Skills row for md/tablet — hidden on xl since sidebar handles it -->
-      <div class="xl:hidden mt-12 pt-10 border-t border-white/8 grid sm:grid-cols-3 gap-8">
+      <div class="xl:hidden mt-10 md:mt-12 pt-8 md:pt-10 border-t border-white/8 grid sm:grid-cols-3 gap-6 sm:gap-8">
         <div>
           <p class="font-mono text-xs text-brand-light/30 mb-3 tracking-widest uppercase">Skills</p>
           <div class="flex flex-wrap gap-2">
@@ -196,22 +211,22 @@
   </section>
 
   <!-- ═══════════════════════════════════════════ PORTFOLIO -->
-  <section id="portfolio" class="py-28 border-t border-white/8">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+  <section id="portfolio" class="py-16 md:py-28 border-t border-white/8">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16">
 
       <div class="grid lg:grid-cols-2 gap-10 xl:gap-14 items-stretch">
 
         <!-- Left: project cards carousel -->
         <div>
-          <div class="mb-10 flex items-end justify-between gap-4">
+          <div class="mb-8 md:mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 sm:gap-4">
             <div>
               <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Work</p>
               <a href="./projects/index.html" class="group inline-flex items-center gap-3">
-                <h2 class="text-4xl font-bold group-hover:text-brand-cyan transition-colors">Projects</h2>
-                <svg class="w-6 h-6 text-brand-light/30 group-hover:text-brand-cyan group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                <h2 class="text-3xl sm:text-4xl font-bold group-hover:text-brand-cyan transition-colors">Projects</h2>
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-brand-light/30 group-hover:text-brand-cyan group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </a>
             </div>
-            <a href="./projects/index.html" class="hidden sm:inline-block text-brand-cyan text-xs font-mono hover:underline whitespace-nowrap">all projects →</a>
+            <a href="./projects/index.html" class="text-brand-cyan text-xs font-mono hover:underline whitespace-nowrap">all projects →</a>
           </div>
 
           <div class="relative overflow-hidden rounded-2xl border border-white/8 bg-white/5 flex flex-col h-full">
@@ -305,9 +320,9 @@
 
         <!-- Right: News carousel -->
         <div class="lg:sticky lg:top-24">
-          <div class="mb-10">
+          <div class="mb-8 md:mb-10">
             <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Updates</p>
-            <h2 class="text-4xl font-bold">News</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold">News</h2>
           </div>
 
           <div class="relative overflow-hidden rounded-2xl border border-white/8 bg-white/5 flex flex-col h-full">
@@ -355,6 +370,26 @@
   </section>
 
   <script>
+    // Mobile nav toggle
+    (function(){
+      const btn    = document.getElementById('nav-toggle');
+      const drawer = document.getElementById('nav-drawer');
+      const iOpen  = document.getElementById('nav-icon-open');
+      const iClose = document.getElementById('nav-icon-close');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        drawer.classList.toggle('hidden');
+        iOpen.classList.toggle('hidden');
+        iClose.classList.toggle('hidden');
+      });
+      // close drawer on link click
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        drawer.classList.add('hidden');
+        iOpen.classList.remove('hidden');
+        iClose.classList.add('hidden');
+      }));
+    })();
+
     let current = 0;
     const total = 1;
     function goToSlide(n) {
@@ -385,11 +420,11 @@
   </script>
 
   <!-- ═══════════════════════════════════════════ GALERÍA -->
-  <section id="gallery" class="py-28 border-t border-white/8">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
-      <div class="mb-14">
+  <section id="gallery" class="py-16 md:py-28 border-t border-white/8">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16">
+      <div class="mb-10 md:mb-14">
         <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Photos</p>
-        <h2 class="text-4xl font-bold">Gallery</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold">Gallery</h2>
       </div>
 
       <div class="gallery-grid">
@@ -425,12 +460,12 @@
   </section>
 
   <!-- ═══════════════════════════════════════════ CONTACTO -->
-  <section id="contact" class="py-28 border-t border-white/8">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+  <section id="contact" class="py-16 md:py-28 border-t border-white/8">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16">
       <div class="max-w-2xl">
         <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Contact</p>
-        <h2 class="text-4xl font-bold mb-6">Let's talk?</h2>
-        <p class="text-brand-light/60 text-lg leading-relaxed mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">Let's talk?</h2>
+        <p class="text-brand-light/60 text-base sm:text-lg leading-relaxed mb-10 md:mb-12">
           Have a question, a proposal, or just want to connect? Reach out!
         </p>
 

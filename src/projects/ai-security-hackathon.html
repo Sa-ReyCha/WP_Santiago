@@ -11,19 +11,31 @@
 <body class="bg-brand-dark text-brand-light antialiased">
 
   <nav class="fixed top-0 w-full bg-brand-dark/90 backdrop-blur-md border-b border-white/8 z-50">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
       <a href="../index.html" class="font-mono font-bold text-brand-cyan tracking-tight">src ~</a>
-      <div class="flex gap-8 text-sm text-brand-light/50 font-medium">
+      <div class="hidden md:flex gap-8 text-sm text-brand-light/50 font-medium">
         <a href="../index.html#hero"      class="hover:text-brand-light transition-colors">home</a>
         <a href="./index.html"            class="text-brand-light transition-colors">projects</a>
         <a href="../index.html#gallery"   class="hover:text-brand-light transition-colors">gallery</a>
         <a href="../index.html#contact"   class="hover:text-brand-light transition-colors">contact</a>
       </div>
+      <button id="nav-toggle" class="md:hidden w-9 h-9 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-brand-light/70 hover:text-brand-cyan hover:border-brand-cyan/40 transition-colors" aria-label="Toggle menu">
+        <svg id="nav-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="nav-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="nav-drawer" class="hidden md:hidden border-t border-white/8 bg-brand-dark/95 backdrop-blur-md">
+      <div class="px-5 py-4 flex flex-col gap-1 text-sm text-brand-light/70 font-medium">
+        <a href="../index.html#hero"    class="py-2.5 hover:text-brand-cyan transition-colors">home</a>
+        <a href="./index.html"          class="py-2.5 text-brand-cyan transition-colors">projects</a>
+        <a href="../index.html#gallery" class="py-2.5 hover:text-brand-cyan transition-colors">gallery</a>
+        <a href="../index.html#contact" class="py-2.5 hover:text-brand-cyan transition-colors">contact</a>
+      </div>
     </div>
   </nav>
 
-  <article class="pt-32 pb-28">
-    <div class="max-w-3xl mx-auto px-6 sm:px-10">
+  <article class="pt-28 md:pt-32 pb-20 md:pb-28">
+    <div class="max-w-3xl mx-auto px-5 sm:px-10">
 
       <a href="./index.html" class="inline-flex items-center gap-2 font-mono text-xs text-brand-light/40 hover:text-brand-cyan transition-colors mb-10">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -36,7 +48,7 @@
           <span class="badge-cyan">AIOps</span>
           <span class="badge-cyan">Security</span>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">AI Security &amp; Anomaly Detection Hackathon</h1>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">AI Security &amp; Anomaly Detection Hackathon</h1>
         <p class="text-brand-light/50 font-mono text-xs tracking-widest uppercase">SAP Labs Monterrey · 2025</p>
       </div>
 
@@ -93,5 +105,25 @@
     </p>
   </footer>
 
+
+  <script>
+    (function(){
+      const btn = document.getElementById('nav-toggle');
+      const drawer = document.getElementById('nav-drawer');
+      const iOpen = document.getElementById('nav-icon-open');
+      const iClose = document.getElementById('nav-icon-close');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        drawer.classList.toggle('hidden');
+        iOpen.classList.toggle('hidden');
+        iClose.classList.toggle('hidden');
+      });
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        drawer.classList.add('hidden');
+        iOpen.classList.remove('hidden');
+        iClose.classList.add('hidden');
+      }));
+    })();
+  </script>
 </body>
 </html>

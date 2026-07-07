@@ -12,38 +12,50 @@
 
   <!-- NAV -->
   <nav class="fixed top-0 w-full bg-brand-dark/90 backdrop-blur-md border-b border-white/8 z-50">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
       <a href="../index.html" class="font-mono font-bold text-brand-cyan tracking-tight">src ~</a>
-      <div class="flex gap-8 text-sm text-brand-light/50 font-medium">
+      <div class="hidden md:flex gap-8 text-sm text-brand-light/50 font-medium">
         <a href="../index.html#hero"      class="hover:text-brand-light transition-colors">home</a>
         <a href="./index.html"            class="text-brand-light transition-colors">projects</a>
         <a href="../index.html#gallery"   class="hover:text-brand-light transition-colors">gallery</a>
         <a href="../index.html#contact"   class="hover:text-brand-light transition-colors">contact</a>
       </div>
+      <button id="nav-toggle" class="md:hidden w-9 h-9 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-brand-light/70 hover:text-brand-cyan hover:border-brand-cyan/40 transition-colors" aria-label="Toggle menu">
+        <svg id="nav-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="nav-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="nav-drawer" class="hidden md:hidden border-t border-white/8 bg-brand-dark/95 backdrop-blur-md">
+      <div class="px-5 py-4 flex flex-col gap-1 text-sm text-brand-light/70 font-medium">
+        <a href="../index.html#hero"    class="py-2.5 hover:text-brand-cyan transition-colors">home</a>
+        <a href="./index.html"          class="py-2.5 text-brand-cyan transition-colors">projects</a>
+        <a href="../index.html#gallery" class="py-2.5 hover:text-brand-cyan transition-colors">gallery</a>
+        <a href="../index.html#contact" class="py-2.5 hover:text-brand-cyan transition-colors">contact</a>
+      </div>
     </div>
   </nav>
 
   <!-- HEADER -->
-  <section class="pt-32 pb-14">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
-      <a href="../index.html" class="inline-flex items-center gap-2 font-mono text-xs text-brand-light/40 hover:text-brand-cyan transition-colors mb-8">
+  <section class="pt-28 md:pt-32 pb-10 md:pb-14">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16">
+      <a href="../index.html" class="inline-flex items-center gap-2 font-mono text-xs text-brand-light/40 hover:text-brand-cyan transition-colors mb-6 md:mb-8">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         back to home
       </a>
       <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Catalog</p>
-      <h1 class="text-5xl md:text-6xl font-bold mb-5">Projects</h1>
-      <p class="text-brand-light/60 text-lg leading-relaxed max-w-2xl">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-5">Projects</h1>
+      <p class="text-brand-light/60 text-base sm:text-lg leading-relaxed max-w-2xl">
         A collection of things I've built — organized by context: academic research, professional code, and personal experiments.
       </p>
     </div>
   </section>
 
   <!-- INDEX / TOC -->
-  <section class="pb-16">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+  <section class="pb-12 md:pb-16">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16">
       <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8 py-6 border-y border-white/8">
         <p class="font-mono text-xs text-brand-light/30 tracking-widest uppercase shrink-0">Index</p>
-        <div class="flex flex-wrap gap-x-8 gap-y-3">
+        <div class="flex flex-wrap gap-x-6 sm:gap-x-8 gap-y-3">
           <a href="#educational" class="group flex items-center gap-3 text-sm hover:text-brand-cyan transition-colors">
             <span class="font-mono text-brand-cyan/60 text-xs group-hover:text-brand-cyan">01</span>
             <span class="text-brand-light/70 group-hover:text-brand-light">Educational</span>
@@ -65,18 +77,18 @@
   </section>
 
   <!-- ═══════════════════════════ EDUCATIONAL -->
-  <section id="educational" class="pb-24 scroll-mt-28">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
-      <div class="flex items-end justify-between gap-4 mb-10">
+  <section id="educational" class="pb-20 md:pb-24 scroll-mt-28">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 sm:gap-4 mb-8 md:mb-10">
         <div>
           <p class="font-mono text-brand-cyan text-xs mb-2 tracking-widest uppercase">01 — Educational</p>
-          <h2 class="text-3xl md:text-4xl font-bold">Research &amp; Academic</h2>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Research &amp; Academic</h2>
           <p class="text-brand-light/50 text-sm mt-2 max-w-xl">Papers, coursework, and deep dives from my Master's programs.</p>
         </div>
-        <span class="hidden sm:block font-mono text-xs text-brand-light/25">2 projects</span>
+        <span class="font-mono text-xs text-brand-light/25 sm:self-end">2 projects</span>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 xl:gap-8">
 
         <!-- RAG & Fine-Tuning LLMs -->
         <a href="./rag-lora-peft.html" class="project-card group flex flex-col">
@@ -129,18 +141,18 @@
   </section>
 
   <!-- ═══════════════════════════ CODE -->
-  <section id="code" class="pb-24 scroll-mt-28 border-t border-white/8 pt-24">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
-      <div class="flex items-end justify-between gap-4 mb-10">
+  <section id="code" class="pb-20 md:pb-24 scroll-mt-28 border-t border-white/8 pt-20 md:pt-24">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 sm:gap-4 mb-8 md:mb-10">
         <div>
           <p class="font-mono text-brand-yellow text-xs mb-2 tracking-widest uppercase">02 — Code</p>
-          <h2 class="text-3xl md:text-4xl font-bold">Professional Work</h2>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Professional Work</h2>
           <p class="text-brand-light/50 text-sm mt-2 max-w-xl">Engineering, initiatives, and things I've built or led at SAP and beyond.</p>
         </div>
-        <span class="hidden sm:block font-mono text-xs text-brand-light/25">1 project</span>
+        <span class="font-mono text-xs text-brand-light/25 sm:self-end">1 project</span>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 xl:gap-8">
 
         <!-- AI Security Hackathon -->
         <a href="./ai-security-hackathon.html" class="project-card group flex flex-col">
@@ -186,18 +198,18 @@
   </section>
 
   <!-- ═══════════════════════════ PERSONAL -->
-  <section id="personal" class="pb-28 scroll-mt-28 border-t border-white/8 pt-24">
-    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
-      <div class="flex items-end justify-between gap-4 mb-10">
+  <section id="personal" class="pb-24 md:pb-28 scroll-mt-28 border-t border-white/8 pt-20 md:pt-24">
+    <div class="max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-16">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 sm:gap-4 mb-8 md:mb-10">
         <div>
           <p class="font-mono text-brand-red text-xs mb-2 tracking-widest uppercase" style="color:#c8412d">03 — Personal</p>
-          <h2 class="text-3xl md:text-4xl font-bold">Experiments &amp; Hobby</h2>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Experiments &amp; Hobby</h2>
           <p class="text-brand-light/50 text-sm mt-2 max-w-xl">Things I build for fun — music, gaming, side projects.</p>
         </div>
-        <span class="hidden sm:block font-mono text-xs text-brand-light/25">coming soon</span>
+        <span class="font-mono text-xs text-brand-light/25 sm:self-end">coming soon</span>
       </div>
 
-      <div class="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-8 py-16 text-center">
+      <div class="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-6 sm:px-8 py-12 sm:py-16 text-center">
         <p class="font-mono text-xs text-brand-light/30 tracking-widest uppercase mb-4">Empty</p>
         <p class="text-brand-light/50 text-sm max-w-sm mx-auto leading-relaxed">
           No personal projects here yet — check back later, or take a look at the <a href="../index.html#gallery" class="text-brand-cyan hover:underline">gallery</a> in the meantime.
@@ -212,6 +224,26 @@
       &copy; 2025 Santiago Reyes Ch&aacute;vez &middot; Human Generated
     </p>
   </footer>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('nav-toggle');
+      const drawer = document.getElementById('nav-drawer');
+      const iOpen = document.getElementById('nav-icon-open');
+      const iClose = document.getElementById('nav-icon-close');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        drawer.classList.toggle('hidden');
+        iOpen.classList.toggle('hidden');
+        iClose.classList.toggle('hidden');
+      });
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        drawer.classList.add('hidden');
+        iOpen.classList.remove('hidden');
+        iClose.classList.add('hidden');
+      }));
+    })();
+  </script>
 
 </body>
 </html>
