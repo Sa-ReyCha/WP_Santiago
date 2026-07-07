@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.html', './src/**/*.js'],
+  safelist: [
+    'max-w-[1440px]',
+    'max-w-[300px]',
+    'lg:max-w-[1440px]',
+    'sm:max-w-none',
+  ],
   theme: {
     extend: {
       colors: {
