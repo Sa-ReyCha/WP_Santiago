@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects · Santiago Reyes Chávez</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-brand-dark text-brand-light antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full bg-brand-dark/90 backdrop-blur-md border-b border-white/8 z-50">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
+      <a href="../index.html" class="font-mono font-bold text-brand-cyan tracking-tight">src ~</a>
+      <div class="flex gap-8 text-sm text-brand-light/50 font-medium">
+        <a href="../index.html#hero"      class="hover:text-brand-light transition-colors">home</a>
+        <a href="./index.html"            class="text-brand-light transition-colors">projects</a>
+        <a href="../index.html#gallery"   class="hover:text-brand-light transition-colors">gallery</a>
+        <a href="../index.html#contact"   class="hover:text-brand-light transition-colors">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="pt-32 pb-14">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+      <a href="../index.html" class="inline-flex items-center gap-2 font-mono text-xs text-brand-light/40 hover:text-brand-cyan transition-colors mb-8">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        back to home
+      </a>
+      <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Catalog</p>
+      <h1 class="text-5xl md:text-6xl font-bold mb-5">Projects</h1>
+      <p class="text-brand-light/60 text-lg leading-relaxed max-w-2xl">
+        A collection of things I've built — organized by context: academic research, professional code, and personal experiments.
+      </p>
+    </div>
+  </section>
+
+  <!-- INDEX / TOC -->
+  <section class="pb-16">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8 py-6 border-y border-white/8">
+        <p class="font-mono text-xs text-brand-light/30 tracking-widest uppercase shrink-0">Index</p>
+        <div class="flex flex-wrap gap-x-8 gap-y-3">
+          <a href="#educational" class="group flex items-center gap-3 text-sm hover:text-brand-cyan transition-colors">
+            <span class="font-mono text-brand-cyan/60 text-xs group-hover:text-brand-cyan">01</span>
+            <span class="text-brand-light/70 group-hover:text-brand-light">Educational</span>
+            <span class="text-brand-light/25 text-xs">· 2</span>
+          </a>
+          <a href="#code" class="group flex items-center gap-3 text-sm hover:text-brand-cyan transition-colors">
+            <span class="font-mono text-brand-cyan/60 text-xs group-hover:text-brand-cyan">02</span>
+            <span class="text-brand-light/70 group-hover:text-brand-light">Code</span>
+            <span class="text-brand-light/25 text-xs">· 1</span>
+          </a>
+          <a href="#personal" class="group flex items-center gap-3 text-sm hover:text-brand-cyan transition-colors">
+            <span class="font-mono text-brand-cyan/60 text-xs group-hover:text-brand-cyan">03</span>
+            <span class="text-brand-light/70 group-hover:text-brand-light">Personal</span>
+            <span class="text-brand-light/25 text-xs">· soon</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ EDUCATIONAL -->
+  <section id="educational" class="pb-24 scroll-mt-28">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+      <div class="flex items-end justify-between gap-4 mb-10">
+        <div>
+          <p class="font-mono text-brand-cyan text-xs mb-2 tracking-widest uppercase">01 — Educational</p>
+          <h2 class="text-3xl md:text-4xl font-bold">Research &amp; Academic</h2>
+          <p class="text-brand-light/50 text-sm mt-2 max-w-xl">Papers, coursework, and deep dives from my Master's programs.</p>
+        </div>
+        <span class="hidden sm:block font-mono text-xs text-brand-light/25">2 projects</span>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+
+        <!-- RAG & Fine-Tuning LLMs -->
+        <a href="./rag-lora-peft.html" class="project-card group flex flex-col">
+          <div class="project-img-wrap aspect-video">
+            <img src="../../public/photos/projects/Understanding_RAG.png" alt="Understanding RAG and Fine-Tuning LLMs"
+                 class="w-full h-full object-cover"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="project-img-placeholder hidden" style="background:linear-gradient(135deg,#00bcf020,#30353980)">
+              <span class="font-mono text-xs text-brand-light/30">RAG &amp; LLMs</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-brand-light group-hover:text-brand-cyan transition-colors">RAG &amp; Fine-Tuning LLMs</h3>
+              <span class="badge-cyan">Research</span>
+            </div>
+            <p class="text-brand-light/60 text-sm leading-relaxed mb-5 flex-1">Research paper on LoRA, PEFT, and RAG — efficient techniques to adapt large language models without full retraining.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2"><span class="tech-tag">LLMs</span><span class="tech-tag">LoRA</span><span class="tech-tag">RAG</span></div>
+              <span class="text-brand-cyan text-sm font-mono">read →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Lung Cancer CNN -->
+        <a href="./lung-cancer-cnn.html" class="project-card group flex flex-col">
+          <div class="project-img-wrap aspect-video">
+            <img src="../../public/photos/projects/Lung_Cancer.png" alt="Lung Cancer Prediction CNN"
+                 class="w-full h-full object-cover"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="project-img-placeholder hidden" style="background:linear-gradient(135deg,#c8412d20,#30353980)">
+              <span class="font-mono text-xs text-brand-light/30">Lung Cancer CNN</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-brand-light group-hover:text-brand-cyan transition-colors">Lung Cancer Prediction</h3>
+              <span class="badge-cyan">Healthcare AI</span>
+            </div>
+            <p class="text-brand-light/60 text-sm leading-relaxed mb-5 flex-1">Two CNN models classifying lung CT scans as Normal, Benign, or Malignant — Model 2 achieved 100% accuracy on the test set.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2"><span class="tech-tag">CNN</span><span class="tech-tag">CV</span><span class="tech-tag">Python</span></div>
+              <span class="text-brand-cyan text-sm font-mono">read →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CODE -->
+  <section id="code" class="pb-24 scroll-mt-28 border-t border-white/8 pt-24">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+      <div class="flex items-end justify-between gap-4 mb-10">
+        <div>
+          <p class="font-mono text-brand-yellow text-xs mb-2 tracking-widest uppercase">02 — Code</p>
+          <h2 class="text-3xl md:text-4xl font-bold">Professional Work</h2>
+          <p class="text-brand-light/50 text-sm mt-2 max-w-xl">Engineering, initiatives, and things I've built or led at SAP and beyond.</p>
+        </div>
+        <span class="hidden sm:block font-mono text-xs text-brand-light/25">1 project</span>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+
+        <!-- AI Security Hackathon -->
+        <a href="./ai-security-hackathon.html" class="project-card group flex flex-col">
+          <div class="project-img-wrap aspect-video" style="background:linear-gradient(135deg,#c8412d30,#30353980)">
+            <div class="project-img-placeholder">
+              <svg class="w-10 h-10 text-brand-red/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-brand-light group-hover:text-brand-cyan transition-colors">AI Security Hackathon</h3>
+              <span class="badge-yellow">SAP × Tec</span>
+            </div>
+            <p class="text-brand-light/60 text-sm leading-relaxed mb-5 flex-1">Designed &amp; led the AI Security &amp; Anomaly Detection challenge at SAP Labs Monterrey.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2"><span class="tech-tag">AIOps</span><span class="tech-tag">SAP BTP</span></div>
+              <span class="text-brand-cyan text-sm font-mono">read →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Placeholder for future code project -->
+        <div class="project-card opacity-40 flex flex-col cursor-not-allowed">
+          <div class="project-img-wrap aspect-video">
+            <div class="project-img-placeholder">
+              <span class="font-mono text-xs text-brand-light/25">soon</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-brand-light/50">More coming</h3>
+              <span class="badge-yellow">WIP</span>
+            </div>
+            <p class="text-brand-light/40 text-sm leading-relaxed mb-5 flex-1">Additional engineering work coming soon.</p>
+            <div class="flex items-center justify-between">
+              <span class="tech-tag">SRE</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PERSONAL -->
+  <section id="personal" class="pb-28 scroll-mt-28 border-t border-white/8 pt-24">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+      <div class="flex items-end justify-between gap-4 mb-10">
+        <div>
+          <p class="font-mono text-brand-red text-xs mb-2 tracking-widest uppercase" style="color:#c8412d">03 — Personal</p>
+          <h2 class="text-3xl md:text-4xl font-bold">Experiments &amp; Hobby</h2>
+          <p class="text-brand-light/50 text-sm mt-2 max-w-xl">Things I build for fun — music, gaming, side projects.</p>
+        </div>
+        <span class="hidden sm:block font-mono text-xs text-brand-light/25">coming soon</span>
+      </div>
+
+      <div class="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-8 py-16 text-center">
+        <p class="font-mono text-xs text-brand-light/30 tracking-widest uppercase mb-4">Empty</p>
+        <p class="text-brand-light/50 text-sm max-w-sm mx-auto leading-relaxed">
+          No personal projects here yet — check back later, or take a look at the <a href="../index.html#gallery" class="text-brand-cyan hover:underline">gallery</a> in the meantime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-white/8 text-center">
+    <p class="font-mono text-xs text-brand-light/25">
+      &copy; 2025 Santiago Reyes Ch&aacute;vez &middot; Human Generated
+    </p>
+  </footer>
+
+</body>
+</html>

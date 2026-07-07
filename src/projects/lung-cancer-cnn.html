@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lung Cancer Prediction · Santiago Reyes Chávez</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-brand-dark text-brand-light antialiased">
+
+  <nav class="fixed top-0 w-full bg-brand-dark/90 backdrop-blur-md border-b border-white/8 z-50">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
+      <a href="../index.html" class="font-mono font-bold text-brand-cyan tracking-tight">src ~</a>
+      <div class="flex gap-8 text-sm text-brand-light/50 font-medium">
+        <a href="../index.html#hero"    class="hover:text-brand-light transition-colors">home</a>
+        <a href="./index.html"          class="text-brand-light transition-colors">projects</a>
+        <a href="../index.html#gallery" class="hover:text-brand-light transition-colors">gallery</a>
+        <a href="../index.html#contact" class="hover:text-brand-light transition-colors">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="pt-32 pb-28">
+    <div class="max-w-3xl mx-auto px-6 sm:px-10">
+
+      <a href="./index.html" class="inline-flex items-center gap-2 font-mono text-xs text-brand-light/40 hover:text-brand-cyan transition-colors mb-10">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        all projects
+      </a>
+
+      <!-- Header -->
+      <div class="mb-10">
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="badge-cyan">Research</span>
+          <span class="badge-cyan">Computer Vision</span>
+          <span class="badge-cyan">Healthcare AI</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">
+          Lung Cancer Prediction<br/><span class="gradient-text">CNN Approach</span>
+        </h1>
+        <p class="text-brand-light/50 font-mono text-xs tracking-widest uppercase">
+          Deep Learning · ITESM · July 2024
+        </p>
+      </div>
+
+      <!-- Hero image -->
+      <div class="rounded-2xl overflow-hidden border border-white/8 mb-12 aspect-video bg-white/5">
+        <img src="../../public/photos/projects/Lung_Cancer.png" alt="Lung Cancer Prediction CNN"
+             class="w-full h-full object-cover"
+             onerror="this.style.display='none'; this.parentElement.classList.add('flex','items-center','justify-center'); this.parentElement.innerHTML='<span class=&quot;font-mono text-xs text-brand-light/30&quot;>Lung Cancer CNN</span>';" />
+      </div>
+
+      <!-- Summary box -->
+      <div class="mb-10 p-6 rounded-xl border border-brand-cyan/20 bg-brand-cyan/5">
+        <p class="font-mono text-xs text-brand-cyan mb-3 tracking-widest uppercase">Summary</p>
+        <p class="text-brand-light/70 text-sm leading-relaxed">
+          Two deep learning CNN models trained on 1,190 CT scan images from 110 patients (IQ-OTH/NCCD dataset) to classify lungs as <strong class="text-brand-light">Normal</strong>, <strong class="text-brand-light">Benign</strong>, or <strong class="text-brand-light">Malignant</strong>. Model 2 achieved <strong class="text-brand-light">100% accuracy</strong> on the handpicked test set. Recall was prioritized as the primary metric — missing a malignant case is the worst outcome.
+        </p>
+      </div>
+
+      <!-- Tags -->
+      <div class="flex flex-wrap gap-2 mb-12">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">CNN</span>
+        <span class="tech-tag">TensorFlow</span>
+        <span class="tech-tag">Computer Vision</span>
+        <span class="tech-tag">Healthcare</span>
+        <span class="tech-tag">Deep Learning</span>
+      </div>
+
+      <!-- Body -->
+      <div class="text-brand-light/75 leading-relaxed space-y-8 text-[17px]">
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">Introduction</h2>
+          <p>
+            CT scans are a primary tool in radiology for identifying lung abnormalities. Lung cancer is one of the highest-mortality diseases globally — classified into <strong class="text-brand-light">SCLC</strong> (Small Cell Lung Cancer) and <strong class="text-brand-light">NSCLC</strong> (Non-Small Cell Lung Cancer), with further subtypes including adenocarcinoma in situ (ISA), squamous cell cancer (SCC), and invasive adenocarcinoma (IA).
+          </p>
+          <p class="mt-4">
+            This project trained two CNN architectures to classify CT scans into three categories: Normal, Benign, and Malignant — automating a task that currently depends heavily on experienced radiologists.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">The Dataset</h2>
+          <p>
+            Data comes from the <strong class="text-brand-light">IQ-OTH/NCCD</strong> dataset, collected at an oncology hospital in Iraq in 2019 over 3 months. It contains:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 mt-4 text-brand-light/65">
+            <li><strong class="text-brand-light">1,190 images</strong> from 110 patients</li>
+            <li><strong class="text-brand-light">40 patients</strong> diagnosed as Malignant</li>
+            <li><strong class="text-brand-light">15 patients</strong> diagnosed as Benign</li>
+            <li><strong class="text-brand-light">55 patients</strong> with Normal lungs</li>
+            <li>Image resolution: <strong class="text-brand-light">512×512 px</strong></li>
+          </ul>
+          <p class="mt-4">
+            Noise was present in the form of CT machine artifacts and patient clothing/blankets visible in some scans — addressed through preprocessing transformations.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">Approach &amp; Data Engineering</h2>
+          <p>
+            Images were scaled to <strong class="text-brand-light">244×244 px</strong>. Two preprocessing strategies were tested:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 mt-3 text-brand-light/65">
+            <li><strong class="text-brand-light">Batch 1</strong> — saturation +100%, brightness −100% to suppress noise and emphasize lung tissue</li>
+            <li><strong class="text-brand-light">Batch 2</strong> — original images, no transformation</li>
+          </ul>
+          <p class="mt-4">
+            Data was split into training, validation, and test sets using a random split. Data augmentation (rotation, saturation, etc.) was available as a fallback but not needed given the dataset size.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">Metrics Strategy</h2>
+          <p>
+            <strong class="text-brand-light">Recall</strong> was chosen as the primary metric — in a medical context, false negatives (missing cancer) are far more costly than false positives. Priorities:
+          </p>
+          <ol class="list-decimal pl-6 space-y-2 mt-3 text-brand-light/65">
+            <li><strong class="text-brand-light">Malignant cancer recall</strong> — highest priority</li>
+            <li><strong class="text-brand-light">Benign cancer recall</strong></li>
+            <li><strong class="text-brand-light">Normal recall</strong></li>
+          </ol>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">Model 1</h2>
+          <p>
+            Architecture: convolutional + pooling layers followed by fully connected layers. Batch 1 (saturation/brightness transformed) outperformed Batch 2 on validation — the preprocessing effectively removed noise and emphasized lung features.
+          </p>
+
+          <!-- Results table M1 -->
+          <div class="overflow-x-auto mt-6">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left py-3 pr-6 text-brand-light/40 font-mono text-xs uppercase tracking-widest">Class</th>
+                  <th class="text-left py-3 pr-6 text-brand-cyan font-mono text-xs uppercase tracking-widest">Batch 1 (Test)</th>
+                  <th class="text-left py-3 text-brand-light/40 font-mono text-xs uppercase tracking-widest">Note</th>
+                </tr>
+              </thead>
+              <tbody class="text-brand-light/65">
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-6 font-medium text-brand-light">Malignant</td>
+                  <td class="py-3 pr-6">70% recall — 10/10 positive cases identified</td>
+                  <td class="py-3 text-brand-light/40 text-sm">Priority 1 ✓</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-6 font-medium text-brand-light">Overall accuracy</td>
+                  <td class="py-3 pr-6 text-brand-cyan font-semibold">87%</td>
+                  <td class="py-3 text-brand-light/40 text-sm">Good generalization</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">Model 2</h2>
+          <p>
+            A deeper architecture designed to extract features purely from raw images via deep learning, without relying on engineered transformations:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 mt-3 text-brand-light/65">
+            <li>5 convolutional layers + 5 pooling layers + 2 fully connected layers</li>
+            <li>First 2 conv layers: kernel size 3 (fine feature extraction)</li>
+            <li>Last 3 conv layers: kernel size 5 (advanced features, larger receptive field)</li>
+            <li>Optimizer: <strong class="text-brand-light">RMSprop</strong></li>
+            <li>Loss function: <strong class="text-brand-light">Sparse cross-entropy</strong></li>
+            <li>Train/test split: 80/20</li>
+          </ul>
+          <p class="mt-4 text-brand-cyan font-semibold">
+            Result: 100% accuracy — 10 randomly selected images from each category were correctly classified by the model.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">Discussion &amp; Takeaways</h2>
+          <ul class="list-disc pl-6 space-y-3 text-brand-light/65">
+            <li><strong class="text-brand-light">Preprocessing matters.</strong> Saturation + brightness transformations in Model 1 significantly improved generalization by removing noise artifacts from CT equipment and patient clothing.</li>
+            <li><strong class="text-brand-light">Deeper = better (when done right).</strong> Model 2's deeper architecture with larger kernel sizes in later layers captured finer details, reaching perfect accuracy on the test set.</li>
+            <li><strong class="text-brand-light">Recall over accuracy for medical AI.</strong> A model with lower overall accuracy but high malignant recall is preferable — missing a cancer diagnosis has life-or-death consequences.</li>
+            <li><strong class="text-brand-light">Balanced data still needs noise handling.</strong> Even with a reasonably balanced dataset, artifact noise in CT images required active treatment to prevent the model from learning spurious patterns.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">Conclusion</h2>
+          <p>
+            Both models demonstrated that deep learning is a viable path for automated lung cancer detection from CT scans. Model 2's architecture achieved perfect classification on the handpicked test set. Future work would validate on larger, more diverse datasets and explore additional augmentation techniques to improve robustness across different scanning conditions and patient demographics.
+          </p>
+        </section>
+
+        <!-- References -->
+        <section class="border-t border-white/8 pt-8">
+          <p class="font-mono text-xs text-brand-light/30 mb-4 tracking-widest uppercase">References</p>
+          <ol class="list-decimal pl-6 space-y-2 text-brand-light/40 text-sm">
+            <li>Al-Yasriy et al. (2020). Diagnosis of Lung Cancer Based on CT Scans Using CNN. IOP Conference Series.</li>
+            <li>Kareem et al. (2021). Evaluation of SVM performance in lung cancer detection. Indonesian Journal of Electrical Engineering and Computer Science.</li>
+            <li>Alyasriy &amp; AL-Huseiny (2023). The IQ-OTH/NCCD lung cancer dataset. Mendeley Data. doi:10.17632/bhmdr45bh2.4</li>
+            <li>Wang et al. (2020). Classification of Pathological Types of Lung Cancer from CT Images by Deep Residual Neural Networks. Open Medicine. doi:10.1515/med-2020-0028</li>
+          </ol>
+        </section>
+
+      </div>
+
+      <!-- Links -->
+      <div class="mt-14 pt-10 border-t border-white/8 flex flex-wrap gap-4">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7216177010779176960/" target="_blank"
+           class="px-5 py-2.5 rounded-lg bg-brand-cyan text-brand-dark font-semibold text-sm hover:bg-brand-cyan/90 transition-colors">
+          Read on LinkedIn
+        </a>
+        <a href="./index.html"
+           class="px-5 py-2.5 rounded-lg border border-white/15 text-brand-light/70 text-sm font-medium hover:border-brand-cyan hover:text-brand-light transition-colors">
+          Back to catalog
+        </a>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="py-10 border-t border-white/8 text-center">
+    <p class="font-mono text-xs text-brand-light/25">
+      &copy; 2025 Santiago Reyes Ch&aacute;vez &middot; Human Generated
+    </p>
+  </footer>
+
+</body>
+</html>

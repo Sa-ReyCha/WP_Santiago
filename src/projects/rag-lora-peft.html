@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG &amp; Fine-Tuning LLMs · Santiago Reyes Chávez</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-brand-dark text-brand-light antialiased">
+
+  <nav class="fixed top-0 w-full bg-brand-dark/90 backdrop-blur-md border-b border-white/8 z-50">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
+      <a href="../index.html" class="font-mono font-bold text-brand-cyan tracking-tight">src ~</a>
+      <div class="flex gap-8 text-sm text-brand-light/50 font-medium">
+        <a href="../index.html#hero"    class="hover:text-brand-light transition-colors">home</a>
+        <a href="./index.html"          class="text-brand-light transition-colors">projects</a>
+        <a href="../index.html#gallery" class="hover:text-brand-light transition-colors">gallery</a>
+        <a href="../index.html#contact" class="hover:text-brand-light transition-colors">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="pt-32 pb-28">
+    <div class="max-w-3xl mx-auto px-6 sm:px-10">
+
+      <a href="./index.html" class="inline-flex items-center gap-2 font-mono text-xs text-brand-light/40 hover:text-brand-cyan transition-colors mb-10">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        all projects
+      </a>
+
+      <!-- Header -->
+      <div class="mb-10">
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="badge-cyan">Research</span>
+          <span class="badge-cyan">LLMs</span>
+          <span class="badge-cyan">AI</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">
+          Understanding RAG and Fine-Tuning LLMs using LoRA &amp; PEFT
+        </h1>
+        <p class="text-brand-light/50 font-mono text-xs tracking-widest uppercase">
+          Research Paper · ITESM · December 2024
+        </p>
+        <p class="text-brand-light/40 text-sm mt-2">
+          Co-authored with Andrea Jelena Ramírez García, Daniela Hernández Sánchez, Alejandro Guzmán Chávez &amp; Edwin David Hernández Alejandre
+        </p>
+      </div>
+
+      <!-- Hero image -->
+      <div class="rounded-2xl overflow-hidden border border-white/8 mb-12 aspect-video bg-white/5">
+        <img src="../../public/photos/projects/Understanding_RAG.png" alt="Understanding RAG and Fine-Tuning LLMs"
+             class="w-full h-full object-cover"
+             onerror="this.style.display='none'; this.parentElement.classList.add('flex','items-center','justify-center'); this.parentElement.innerHTML='<span class=&quot;font-mono text-xs text-brand-light/30&quot;>Understanding RAG</span>';" />
+      </div>
+
+      <!-- Abstract -->
+      <div class="mb-10 p-6 rounded-xl border border-brand-cyan/20 bg-brand-cyan/5">
+        <p class="font-mono text-xs text-brand-cyan mb-3 tracking-widest uppercase">Abstract</p>
+        <p class="text-brand-light/70 text-sm leading-relaxed italic">
+          Large Language Models (LLMs) have revolutionized natural language processing by enabling complex and coherent text understanding and generation. However, their adaptability to domain-specific tasks or dynamic contexts remains limited without fine-tuning. This paper explores three pivotal techniques to address this limitation: Low-Rank Adaptation (LoRA), Parameter-Efficient Fine-Tuning (PEFT), and Retrieval-Augmented Generation (RAG). LoRA and PEFT optimize the fine-tuning process by reducing computational overhead and memory requirements, while RAG enhances generative models by incorporating external, real-time knowledge. We discuss their individual strengths, limitations, and synergies, emphasizing their role in advancing efficient and contextually accurate AI applications.
+        </p>
+      </div>
+
+      <!-- Tech tags -->
+      <div class="flex flex-wrap gap-2 mb-12">
+        <span class="tech-tag">LLM</span>
+        <span class="tech-tag">LoRA</span>
+        <span class="tech-tag">PEFT</span>
+        <span class="tech-tag">RAG</span>
+        <span class="tech-tag">Fine-Tuning</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Transformers</span>
+      </div>
+
+      <!-- Body -->
+      <div class="text-brand-light/75 leading-relaxed space-y-8 text-[17px]">
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">I. What is a LLM?</h2>
+          <p>
+            LLMs (Large Language Models) are AI models built from deep neural networks. Models like ChatGPT, Mistral, Gemini, and BERT use different transformer architectures to process and understand natural language. They are trained on vast datasets of articles, books, and web pages — enabling language understanding and coherent generation.
+          </p>
+          <p class="mt-4">
+            Despite their power, LLMs have a fundamental limitation: they struggle with data outside their training distribution — specialized domains like banking, medicine, or law. Instead of retraining from scratch (expensive and slow), techniques like LoRA, PEFT, and RAG allow adaptation without full retraining.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">II. LoRA, PEFT &amp; RAG Explained</h2>
+
+          <h3 class="text-lg font-semibold text-brand-cyan mb-2">Fine-Tuning</h3>
+          <p>
+            Fine-tuning adapts a pre-trained model to a specific dataset and use case, allowing it to acquire new knowledge while retaining general knowledge from pre-training.
+          </p>
+
+          <h3 class="text-lg font-semibold text-brand-cyan mb-2 mt-6">LoRA (Low-Rank Adaptation)</h3>
+          <p>
+            LoRA enhances fine-tuning by updating only a subset of model weights via low-rank decomposition. The weight update ∆W is expressed as <code class="font-mono text-brand-yellow text-sm">∆W = A · B</code>, where A and B have far fewer dimensions than the original weight matrix W. This reduces GPU memory usage by up to 90% in some cases — for example, adapting a Vision Transformer for medical imaging — while achieving performance comparable to full fine-tuning.
+          </p>
+
+          <h3 class="text-lg font-semibold text-brand-cyan mb-2 mt-6">PEFT (Parameter-Efficient Fine-Tuning)</h3>
+          <p>
+            PEFT is a family of methods that minimize parameter updates during fine-tuning. Key variants include:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 mt-3 text-brand-light/65">
+            <li><strong class="text-brand-light">Adapters</strong> — small trainable modules inserted between model layers to capture task-specific nuances without altering pre-trained weights</li>
+            <li><strong class="text-brand-light">Prompt Tuning</strong> — appends soft prompts or prefix vectors to input embeddings, leveraging pre-trained capacity without updating internal weights</li>
+            <li><strong class="text-brand-light">BitFit</strong> — adjusts only bias terms across layers, providing a lightweight fine-tuning alternative</li>
+            <li><strong class="text-brand-light">AdapterDrop</strong> — removes adapters in transformer layers not important to the task, improving efficiency</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-brand-cyan mb-2 mt-6">RAG (Retrieval-Augmented Generation)</h3>
+          <p>
+            RAG combines retrieval-based methods with generative models to improve accuracy, contextual relevance, and factual correctness. It consists of two main components: a <em>retriever</em> that fetches relevant documents from an external knowledge source, and a <em>generator</em> that produces coherent responses using both the query and the retrieved context.
+          </p>
+          <p class="mt-4">
+            RAG excels in dynamic environments where data constantly changes — customer support, news Q&amp;A, medical virtual assistants. However, it depends on external source quality: contradictory or outdated data directly affects output reliability.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">III. Practical Applications</h2>
+
+          <h3 class="text-lg font-semibold text-brand-cyan mb-2">LoRA &amp; PEFT</h3>
+          <ul class="list-disc pl-6 space-y-2 text-brand-light/65">
+            <li>Domain-specific LLMs for medicine, law, and finance — without full retraining</li>
+            <li>Sentiment analysis on specialized corpora</li>
+            <li>Image classification with Vision Transformers in constrained environments</li>
+            <li>Cost reduction, enabling startups to leverage large models affordably</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-brand-cyan mb-2 mt-6">RAG</h3>
+          <ul class="list-disc pl-6 space-y-2 text-brand-light/65">
+            <li>Dynamic enterprise chatbots that retrieve from internal databases in real time</li>
+            <li>Personalized search engines with up-to-date knowledge</li>
+            <li>Technical support systems that pull from the latest documentation</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">IV. Comparison</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left py-3 pr-6 text-brand-light/40 font-mono text-xs uppercase tracking-widest">Dimension</th>
+                  <th class="text-left py-3 pr-6 text-brand-cyan font-mono text-xs uppercase tracking-widest">LoRA / PEFT</th>
+                  <th class="text-left py-3 text-brand-yellow font-mono text-xs uppercase tracking-widest">RAG</th>
+                </tr>
+              </thead>
+              <tbody class="text-brand-light/65">
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-6 font-medium text-brand-light">Main purpose</td>
+                  <td class="py-3 pr-6">Fine-tune for specific tasks</td>
+                  <td class="py-3">Integrate dynamic knowledge at runtime</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-6 font-medium text-brand-light">Computational cost</td>
+                  <td class="py-3 pr-6">Low — no extensive training</td>
+                  <td class="py-3">Moderate — frequent DB access</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-6 font-medium text-brand-light">Ideal use case</td>
+                  <td class="py-3 pr-6">Static domains (medicine, law)</td>
+                  <td class="py-3">Dynamic scenarios (CRM, support)</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-6 font-medium text-brand-light">Implementation</td>
+                  <td class="py-3 pr-6">Training with specific datasets</td>
+                  <td class="py-3">External data sources at runtime</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-brand-light mb-4">V. Conclusion</h2>
+          <p>
+            LoRA and PEFT demonstrate exceptional efficiency in static, resource-constrained environments — suitable for healthcare, finance, and specialized NLP. RAG shines in dynamic scenarios requiring real-time external knowledge. Understanding the strengths and limitations of each method is crucial for building robust, efficient, and adaptive AI systems that address diverse challenges.
+          </p>
+        </section>
+
+        <!-- References -->
+        <section class="border-t border-white/8 pt-8">
+          <h2 class="text-lg font-bold text-brand-light mb-4 font-mono text-sm tracking-widest uppercase">References</h2>
+          <ol class="list-decimal pl-6 space-y-2 text-brand-light/40 text-sm">
+            <li>Hu et al. (2021). LoRA: Low-rank adaptation of large language models. arXiv:2106.09685</li>
+            <li>Wu et al. (2024). LoRA: Dynamically orchestrating requests and adapters. OSDI.</li>
+            <li>Xu et al. (2023). Parameter-efficient fine-tuning methods: A critical review. arXiv:2312.12148</li>
+            <li>Gao et al. (2024). FashionGPT: LLM instruction fine-tuning with multiple LoRA-adapter fusion. Knowledge-Based Systems.</li>
+            <li>Valipour et al. (2023). DyLoRA: Dynamic search-free low-rank adaptation. EACL.</li>
+            <li>Gao et al. (2024). RAG for large language models: A survey. arXiv:2312.10997</li>
+            <li>Lewis et al. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. arXiv:2005.11401</li>
+          </ol>
+        </section>
+
+      </div>
+
+      <!-- Links -->
+      <div class="mt-14 pt-10 border-t border-white/8 flex flex-wrap gap-4">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7275171608913137667/" target="_blank"
+           class="px-5 py-2.5 rounded-lg bg-brand-cyan text-brand-dark font-semibold text-sm hover:bg-brand-cyan/90 transition-colors">
+          Read on LinkedIn
+        </a>
+        <a href="./index.html"
+           class="px-5 py-2.5 rounded-lg border border-white/15 text-brand-light/70 text-sm font-medium hover:border-brand-cyan hover:text-brand-light transition-colors">
+          Back to catalog
+        </a>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="py-10 border-t border-white/8 text-center">
+    <p class="font-mono text-xs text-brand-light/25">
+      &copy; 2025 Santiago Reyes Ch&aacute;vez &middot; Human Generated
+    </p>
+  </footer>
+
+</body>
+</html>

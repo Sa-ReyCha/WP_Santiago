@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santiago Reyes Chávez</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-brand-dark text-brand-light antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full bg-brand-dark/90 backdrop-blur-md border-b border-white/8 z-50">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16 py-4 flex justify-between items-center">
+      <span class="font-mono font-bold text-brand-cyan tracking-tight">src ~</span>
+      <div class="flex gap-8 text-sm text-brand-light/50 font-medium">
+        <a href="#hero"           class="hover:text-brand-light transition-colors">home</a>
+        <a href="./projects/index.html" class="hover:text-brand-light transition-colors">projects</a>
+        <a href="#gallery"        class="hover:text-brand-light transition-colors">gallery</a>
+        <a href="#contact"        class="hover:text-brand-light transition-colors">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ HERO + ABOUT -->
+  <section id="hero" class="min-h-screen flex items-center pt-20">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16 py-16 w-full">
+
+      <!-- 3-col on xl: photo | name+bio | skills sidebar -->
+      <div class="grid md:grid-cols-[260px_1fr] xl:grid-cols-[300px_1fr_280px] gap-10 xl:gap-14 items-start">
+
+        <!-- Col 1: Photo — clean, no borders/badges -->
+        <div class="mx-auto md:mx-0 w-56 sm:w-64 md:w-full">
+          <div class="relative rounded-2xl overflow-hidden" style="aspect-ratio: 3/4;">
+            <img
+              src="../public/photos/santiago.png"
+              alt="Santiago Reyes Chávez"
+              class="w-full h-full object-cover object-top"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center bg-white/5 text-brand-light/20 gap-3">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            </div>
+            <!-- Subtle gradient fade to bg at bottom -->
+            <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-brand-dark to-transparent"></div>
+          </div>
+          <!-- Social icons below photo -->
+          <div class="flex justify-center gap-3 mt-4">
+            <a href="https://www.linkedin.com/in/santiago-reyeschavez/" target="_blank" class="social-icon">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://github.com/Sa-ReyCha" target="_blank" class="social-icon">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+            <a href="https://medium.com/@a01027358" target="_blank" class="social-icon">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Name + bio + CTAs + socials -->
+        <div id="about">
+          <!-- Role pill -->
+          <div class="inline-flex items-center gap-2 mb-7 px-3 py-1.5 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 w-fit">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"></span>
+            <span class="font-mono text-brand-cyan text-xs tracking-widest uppercase">GCID AIOps Engineer · SRE · SAP</span>
+          </div>
+
+          <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.05] mb-7">
+            Santiago<br />
+            <span class="gradient-text">Reyes</span><br />
+            Chávez
+          </h1>
+
+          <p class="text-brand-light/60 leading-relaxed mb-3 max-w-lg">
+            GCID AIOps Engineer (SRE) at SAP with two Master's degrees — MS in Applied Artificial Intelligence (ITESM) and MS in IT Management (UTM, in progress). I specialize in applying ML to infrastructure problems: anomaly detection, AI Security, and autonomous agent development.
+          </p>
+          <p class="text-brand-light/35 text-sm leading-relaxed mb-9 max-w-lg">
+            Specialization in Renewable Energy &amp; Advanced Data Analytics. Outside of work I'm a musician, gamer, and always learning something new.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="./projects/index.html"
+               class="px-6 py-3 rounded-lg bg-brand-cyan text-brand-dark font-semibold text-sm hover:bg-brand-cyan/90 transition-colors">
+              View projects
+            </a>
+            <a href="#contact"
+               class="px-6 py-3 rounded-lg border border-white/15 text-brand-light/70 text-sm font-medium hover:border-brand-cyan hover:text-brand-light transition-colors">
+              Let's connect
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 3: Skills sidebar — xl only -->
+        <div class="hidden xl:flex flex-col gap-8 pt-1 border-l border-white/8 pl-10">
+
+          <div>
+            <p class="font-mono text-xs text-brand-light/30 mb-3 tracking-widest uppercase">Skills</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Anomaly Detection</span>
+              <span class="skill-tag">AI Security</span>
+              <span class="skill-tag">Agentic AI</span>
+              <span class="skill-tag">SRE / AIOps</span>
+              <span class="skill-tag">Cloud</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Data Analytics</span>
+              <span class="skill-tag">Renewable Energy</span>
+            </div>
+          </div>
+
+          <div class="h-px bg-white/8"></div>
+
+          <div>
+            <p class="font-mono text-xs text-brand-light/30 mb-3 tracking-widest uppercase">Experience</p>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-brand-cyan mt-1.5 shrink-0"></div>
+              <div>
+                <p class="font-semibold text-sm text-brand-light">GCID AIOps Engineer (SRE)</p>
+                <p class="text-brand-cyan text-xs font-mono mt-0.5">SAP</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="font-mono text-xs text-brand-light/30 mb-3 tracking-widest uppercase">Education</p>
+            <div class="space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-brand-yellow mt-1.5 shrink-0"></div>
+                <div>
+                  <p class="font-semibold text-sm text-brand-light">MS Applied Artificial Intelligence</p>
+                  <p class="text-brand-light/40 text-xs font-mono mt-0.5">ITESM</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-brand-yellow/50 mt-1.5 shrink-0"></div>
+                <div>
+                  <p class="font-semibold text-sm text-brand-light">MS IT Management</p>
+                  <p class="text-brand-light/40 text-xs font-mono mt-0.5">UTM · in progress</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Skills row for md/tablet — hidden on xl since sidebar handles it -->
+      <div class="xl:hidden mt-12 pt-10 border-t border-white/8 grid sm:grid-cols-3 gap-8">
+        <div>
+          <p class="font-mono text-xs text-brand-light/30 mb-3 tracking-widest uppercase">Skills</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Anomaly Detection</span>
+            <span class="skill-tag">AI Security</span>
+            <span class="skill-tag">Agentic AI</span>
+            <span class="skill-tag">SRE / AIOps</span>
+            <span class="skill-tag">Cloud</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Data Analytics</span>
+            <span class="skill-tag">Renewable Energy</span>
+          </div>
+        </div>
+        <div>
+          <p class="font-mono text-xs text-brand-light/30 mb-3 tracking-widest uppercase">Experience</p>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 rounded-full bg-brand-cyan mt-1.5 shrink-0"></div>
+            <div>
+              <p class="font-semibold text-sm text-brand-light">GCID AIOps Engineer (SRE)</p>
+              <p class="text-brand-cyan text-xs font-mono mt-0.5">SAP</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="font-mono text-xs text-brand-light/30 mb-3 tracking-widest uppercase">Education</p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-brand-yellow mt-1.5 shrink-0"></div>
+              <div>
+                <p class="font-semibold text-sm text-brand-light">MS Applied Artificial Intelligence</p>
+                <p class="text-brand-light/40 text-xs font-mono mt-0.5">ITESM</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-brand-yellow/50 mt-1.5 shrink-0"></div>
+              <div>
+                <p class="font-semibold text-sm text-brand-light">MS IT Management</p>
+                <p class="text-brand-light/40 text-xs font-mono mt-0.5">UTM · in progress</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ PORTFOLIO -->
+  <section id="portfolio" class="py-28 border-t border-white/8">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+
+      <div class="grid lg:grid-cols-2 gap-10 xl:gap-14 items-stretch">
+
+        <!-- Left: project cards carousel -->
+        <div>
+          <div class="mb-10 flex items-end justify-between gap-4">
+            <div>
+              <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Work</p>
+              <a href="./projects/index.html" class="group inline-flex items-center gap-3">
+                <h2 class="text-4xl font-bold group-hover:text-brand-cyan transition-colors">Projects</h2>
+                <svg class="w-6 h-6 text-brand-light/30 group-hover:text-brand-cyan group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+            <a href="./projects/index.html" class="hidden sm:inline-block text-brand-cyan text-xs font-mono hover:underline whitespace-nowrap">all projects →</a>
+          </div>
+
+          <div class="relative overflow-hidden rounded-2xl border border-white/8 bg-white/5 flex flex-col h-full">
+            <div id="proj-track" class="flex transition-transform duration-500 ease-in-out flex-1">
+
+              <!-- Slide 1: RAG & Fine-Tuning LLMs -->
+              <div class="min-w-full">
+                <div class="project-img-wrap aspect-video rounded-none">
+                  <img src="../public/photos/projects/Understanding_RAG.png" alt="RAG & Fine-Tuning LLMs"
+                       class="w-full h-full object-cover"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="project-img-placeholder hidden" style="background:linear-gradient(135deg,#00bcf020,#30353980)">
+                    <span class="font-mono text-xs text-brand-light/30">RAG &amp; LLMs</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-xl font-bold text-brand-light">RAG &amp; Fine-Tuning LLMs</h3>
+                    <span class="badge-cyan">Research</span>
+                  </div>
+                  <p class="text-brand-light/60 text-sm leading-relaxed mb-5">Research paper on LoRA, PEFT, and RAG — efficient techniques to adapt LLMs to domain-specific tasks without full retraining.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-2"><span class="tech-tag">LLMs</span><span class="tech-tag">LoRA</span><span class="tech-tag">RAG</span></div>
+                    <a href="./projects/rag-lora-peft.html" class="text-brand-cyan text-sm font-mono hover:underline">view →</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Lung Cancer CNN -->
+              <div class="min-w-full">
+                <div class="project-img-wrap aspect-video rounded-none">
+                  <img src="../public/photos/projects/Lung_Cancer.png" alt="Lung Cancer Prediction CNN"
+                       class="w-full h-full object-cover"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="project-img-placeholder hidden" style="background:linear-gradient(135deg,#c8412d20,#30353980)">
+                    <span class="font-mono text-xs text-brand-light/30">Lung Cancer CNN</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-xl font-bold text-brand-light">Lung Cancer Prediction</h3>
+                    <span class="badge-cyan">Healthcare AI</span>
+                  </div>
+                  <p class="text-brand-light/60 text-sm leading-relaxed mb-5">Two CNNs classifying lung CT scans as Normal, Benign, or Malignant — Model 2 hit 100% accuracy on the test set, prioritizing recall for malignant detection.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-2"><span class="tech-tag">CNN</span><span class="tech-tag">CV</span><span class="tech-tag">Python</span></div>
+                    <a href="./projects/lung-cancer-cnn.html" class="text-brand-cyan text-sm font-mono hover:underline">view →</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3: AI Security Hackathon -->
+              <div class="min-w-full">
+                <div class="project-img-wrap aspect-video rounded-none" style="background:linear-gradient(135deg,#c8412d30,#30353980)">
+                  <div class="project-img-placeholder">
+                    <svg class="w-10 h-10 text-brand-red/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-xl font-bold text-brand-light">AI Security Hackathon</h3>
+                    <span class="badge-yellow">SAP × Tec</span>
+                  </div>
+                  <p class="text-brand-light/60 text-sm leading-relaxed mb-5">Designed &amp; led the AI Security &amp; Anomaly Detection challenge at SAP Labs Monterrey. 21 teams competed, 6 finalists built end-to-end solutions on SAP BTP &amp; HANA.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-2"><span class="tech-tag">AIOps</span><span class="tech-tag">SAP BTP</span></div>
+                    <a href="./projects/ai-security-hackathon.html" class="text-brand-cyan text-sm font-mono hover:underline">view →</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4: WIP -->
+              <div class="min-w-full">
+                <div class="project-img-wrap aspect-video rounded-none">
+                  <div class="project-img-placeholder">
+                    <span class="font-mono text-xs text-brand-light/25">coming soon</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-xl font-bold text-brand-light/50">More coming soon</h3>
+                    <span class="badge-yellow">WIP</span>
+                  </div>
+                  <p class="text-brand-light/40 text-sm leading-relaxed mb-5">More projects on the way.</p>
+                  <div class="flex items-center justify-between">
+                    <span class="tech-tag">SRE</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Controls -->
+            <div class="flex items-center justify-between px-6 pb-6 pt-2 border-t border-white/8">
+              <div class="flex gap-2" id="proj-dots">
+                <button onclick="goToProj(0)" class="proj-dot h-1.5 rounded-full bg-brand-cyan transition-all" style="width:1.5rem"></button>
+                <button onclick="goToProj(1)" class="proj-dot h-1.5 w-1.5 rounded-full bg-white/20 transition-all"></button>
+                <button onclick="goToProj(2)" class="proj-dot h-1.5 w-1.5 rounded-full bg-white/20 transition-all"></button>
+                <button onclick="goToProj(3)" class="proj-dot h-1.5 w-1.5 rounded-full bg-white/20 transition-all"></button>
+              </div>
+              <div class="flex gap-2">
+                <button onclick="prevProj()" class="w-8 h-8 rounded-lg border border-white/10 bg-white/5 hover:border-brand-cyan/50 hover:text-brand-cyan transition-all flex items-center justify-center text-brand-light/40">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button onclick="nextProj()" class="w-8 h-8 rounded-lg border border-white/10 bg-white/5 hover:border-brand-cyan/50 hover:text-brand-cyan transition-all flex items-center justify-center text-brand-light/40">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: News carousel -->
+        <div class="lg:sticky lg:top-24">
+          <div class="mb-10">
+            <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Updates</p>
+            <h2 class="text-4xl font-bold">News</h2>
+          </div>
+
+          <div class="relative overflow-hidden rounded-2xl border border-white/8 bg-white/5 flex flex-col h-full">
+            <div id="news-track" class="flex transition-transform duration-500 ease-in-out flex-1">
+
+              <div class="min-w-full flex flex-col">
+                <div class="project-img-wrap aspect-video rounded-none">
+                  <img src="../public/photos/new-project-1.png" alt="FutDat"
+                       class="w-full h-full object-cover"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="project-img-placeholder hidden" style="background:linear-gradient(135deg,#00bcf030,#30353980)">
+                    <span class="font-mono text-xs text-brand-light/30">FutDat</span>
+                  </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                <span class="badge-cyan mb-5 inline-block">LinkedIn · 1 week ago</span>
+                <p class="text-brand-light/80 text-sm leading-relaxed mb-6 flex-1">
+                  I built a real-time football analytics platform (FutDat) that predicts match outcomes and generates deep tactical insights — featuring live data analysis and a personalized AI assistant that breaks down complex results into clear, actionable explanations.
+                </p>
+                <a href="https://www.linkedin.com/in/santiago-reyeschavez/" target="_blank" class="text-brand-cyan text-xs font-mono hover:underline">read on LinkedIn →</a>
+                </div>
+              </div>
+
+              <div class="min-w-full flex flex-col">
+                <div class="project-img-wrap aspect-video rounded-none">
+                  <img src="../public/photos/photo_7.png" alt="Hackathon"
+                       class="w-full h-full object-cover"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="project-img-placeholder hidden" style="background:linear-gradient(135deg,#c8412d30,#30353980)">
+                    <span class="font-mono text-xs text-brand-light/30">Hackathon</span>
+                  </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                <span class="badge-yellow mb-5 inline-block">Achievement · 1 month ago</span>
+                <p class="text-brand-light/80 text-sm leading-relaxed mb-6 flex-1">
+                  Designed and led the AI Security &amp; Anomaly Detection Hackathon at SAP Labs Monterrey in collaboration with Tecnológico de Monterrey. 21 teams competed, 6 finalists built end-to-end anomaly detection solutions on SAP BTP &amp; HANA.
+                </p>
+                <a href="https://www.linkedin.com/in/santiago-reyeschavez/" target="_blank" class="text-brand-cyan text-xs font-mono hover:underline">read on LinkedIn →</a>
+                </div>
+              </div>
+
+              <div class="min-w-full flex flex-col">
+                <div class="project-img-wrap aspect-video rounded-none">
+                  <img src="../public/photos/new-project-2.png" alt="Education"
+                       class="w-full h-full object-cover"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="project-img-placeholder hidden" style="background:linear-gradient(135deg,#ffe55630,#30353980)">
+                    <span class="font-mono text-xs text-brand-light/30">UTM</span>
+                  </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                <span class="badge-cyan mb-5 inline-block">Education · 1 month ago</span>
+                <p class="text-brand-light/80 text-sm leading-relaxed mb-6 flex-1">
+                  Starting my second Master's degree in Information Technology Management at UTM — deepening the management side of tech: digital transformation, IT security strategy, financial resource management, and system architecture with my AI context.
+                </p>
+                <a href="https://www.linkedin.com/in/santiago-reyeschavez/" target="_blank" class="text-brand-cyan text-xs font-mono hover:underline">read on LinkedIn →</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Controls -->
+            <div class="flex items-center justify-between px-6 pb-6 pt-2 border-t border-white/8">
+              <div class="flex gap-2" id="news-dots">
+                <button onclick="goToSlide(0)" class="news-dot h-1.5 rounded-full bg-brand-cyan transition-all" style="width:1.5rem"></button>
+                <button onclick="goToSlide(1)" class="news-dot h-1.5 w-1.5 rounded-full bg-white/20 transition-all"></button>
+                <button onclick="goToSlide(2)" class="news-dot h-1.5 w-1.5 rounded-full bg-white/20 transition-all"></button>
+              </div>
+              <div class="flex gap-2">
+                <button onclick="prevSlide()" class="w-8 h-8 rounded-lg border border-white/10 bg-white/5 hover:border-brand-cyan/50 hover:text-brand-cyan transition-all flex items-center justify-center text-brand-light/40">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button onclick="nextSlide()" class="w-8 h-8 rounded-lg border border-white/10 bg-white/5 hover:border-brand-cyan/50 hover:text-brand-cyan transition-all flex items-center justify-center text-brand-light/40">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let current = 0;
+    const total = 3;
+    function goToSlide(n) {
+      current = n;
+      document.getElementById('news-track').style.transform = 'translateX(-' + (current * 100) + '%)';
+      document.querySelectorAll('.news-dot').forEach((d, i) => {
+        d.style.backgroundColor = i === current ? '#00bcf0' : 'rgba(255,255,255,0.2)';
+        d.style.width = i === current ? '1.5rem' : '0.375rem';
+      });
+    }
+    function nextSlide() { goToSlide((current + 1) % total); }
+    function prevSlide() { goToSlide((current - 1 + total) % total); }
+    setInterval(nextSlide, 6000);
+
+    let projCurrent = 0;
+    const projTotal = 4;
+    function goToProj(n) {
+      projCurrent = n;
+      document.getElementById('proj-track').style.transform = 'translateX(-' + (projCurrent * 100) + '%)';
+      document.querySelectorAll('.proj-dot').forEach((d, i) => {
+        d.style.backgroundColor = i === projCurrent ? '#00bcf0' : 'rgba(255,255,255,0.2)';
+        d.style.width = i === projCurrent ? '1.5rem' : '0.375rem';
+      });
+    }
+    function nextProj() { goToProj((projCurrent + 1) % projTotal); }
+    function prevProj() { goToProj((projCurrent - 1 + projTotal) % projTotal); }
+    setInterval(nextProj, 7000);
+  </script>
+
+  <!-- ═══════════════════════════════════════════ GALERÍA -->
+  <section id="gallery" class="py-28 border-t border-white/8">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+      <div class="mb-14">
+        <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Photos</p>
+        <h2 class="text-4xl font-bold">Gallery</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="../public/photos/photo_1.jpg" alt="Photo 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="../public/photos/photo_2.jpeg" alt="Photo 2" />
+        </div>
+        <div class="gallery-item">
+          <img src="../public/photos/photo_3.png" alt="Photo 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="../public/photos/photo_4.jpeg" alt="Photo 4" />
+        </div>
+        <div class="gallery-item">
+          <img src="../public/photos/photo_5.jpeg" alt="Photo 5" />
+        </div>
+        <div class="gallery-item">
+          <img src="../public/photos/photo_6.jpeg" alt="Photo 6" />
+        </div>
+        <div class="gallery-item">
+          <img src="../public/photos/photo_7.png" alt="Photo 7" />
+        </div>
+        <div class="gallery-item">
+          <img src="../public/photos/new-project-1.png" alt="Project" />
+        </div>
+        <div class="gallery-item">
+          <img src="../public/photos/new-project-2.png" alt="Project 2" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CONTACTO -->
+  <section id="contact" class="py-28 border-t border-white/8">
+    <div class="max-w-screen-xl mx-auto px-6 sm:px-10 xl:px-16">
+      <div class="max-w-2xl">
+        <p class="font-mono text-brand-cyan text-xs mb-3 tracking-widest uppercase">Contact</p>
+        <h2 class="text-4xl font-bold mb-6">Let's talk?</h2>
+        <p class="text-brand-light/60 text-lg leading-relaxed mb-12">
+          Have a question, a proposal, or just want to connect? Reach out!
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://www.linkedin.com/in/santiago-reyeschavez/" target="_blank" class="contact-card">
+            <svg class="w-6 h-6 text-brand-cyan shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <div>
+              <p class="font-semibold text-brand-light">LinkedIn</p>
+              <p class="text-xs text-brand-light/40">santiago-reyeschavez</p>
+            </div>
+          </a>
+          <a href="https://github.com/Sa-ReyCha" target="_blank" class="contact-card">
+            <svg class="w-6 h-6 text-brand-cyan shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <div>
+              <p class="font-semibold text-brand-light">GitHub</p>
+              <p class="text-xs text-brand-light/40">Sa-ReyCha</p>
+            </div>
+          </a>
+          <a href="https://medium.com/@a01027358" target="_blank" class="contact-card">
+            <svg class="w-6 h-6 text-brand-cyan shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+            <div>
+              <p class="font-semibold text-brand-light">Medium</p>
+              <p class="text-xs text-brand-light/40">@a01027358</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-white/8 text-center">
+    <p class="font-mono text-xs text-brand-light/25">
+      &copy; 2025 Santiago Reyes Ch&aacute;vez &middot; Human Generated
+    </p>
+  </footer>
+
+</body>
+</html>

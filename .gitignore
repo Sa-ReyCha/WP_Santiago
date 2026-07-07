@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment secrets — never commit this
+.env
+
+# Tailwind compiled output (dev watch generates this)
+src/styles.css
+
+# macOS
+.DS_Store
